@@ -1,5 +1,5 @@
 # Example .gitignore file for your config dir
 *
-!*.yaml
+!*.dash
 !.gitignore
 secrets.yaml

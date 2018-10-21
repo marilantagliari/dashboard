@@ -1,0 +1,141 @@
+title: Main Dashboard Home Automation
+widget_dimensions: [120,120]
+widget_size: [1,1]
+widget_margins: [2,2]
+columns: 8
+global_parameters:
+    use_comma: 0
+    precision: 1
+    use_hass_icon: 1
+
+clock:
+  widget_type: clock
+
+weather:
+  widget_type: weather
+  units: "&deg,C"
+
+mrt6:
+    widget_type: device_tracker
+    title: Marilan
+    icon_on: mdi-cellphone-iphone
+    device: mrt6
+
+gas:
+    widget_type: binary_sensor
+    title: Gas
+    entity: binary_sensor.natgas_sensor_158d000129c930
+    icon_on: mdi-stove 
+    icon_off: mdi-stove
+
+fumaca:
+    widget_type: binary_sensor
+    title: Fumaca
+    entity: binary_sensor.smoke_sensor_158d000149d43c
+    icon_on: mdi-alarm-light
+    icon_off: mdi-alarm-light
+
+light_sofa:
+    widget_type: light
+    title: Led Sofa
+    entity: light.led_sofa
+    icon_on: mdi-sofa
+    icon_off: mdi-sofa
+
+light_abajur_sala:
+    widget_type: switch
+    title: Abajur Sala
+    entity: switch.plug_158d0001717b65
+    icon_on: mdi-lightbulb-on-outline
+    icon_off: mdi-lightbulb-outline
+
+light_abajur_quarto:
+    widget_type: light
+    title: Abajur Quarto
+    entity: light.abajur_quarto
+    icon_on: mdi-lightbulb-on-outline
+    icon_off: mdi-lightbulb-outline
+
+tv_quarto:
+    widget_type: script
+    title: TV Quarto
+    entity: script.quarto_tv_power
+    icon_on: mdi-television-classic
+    icon_off: mdi-television-classic
+
+net_quarto:
+    widget_type: script
+    title: NET Quarto
+    entity: script.quarto_net_power
+    icon_on: mdi-monitor-multiple
+    icon_off: mdi-monitor-multiple
+
+globo_quarto:
+    widget_type: script
+    title: Globo
+    entity: script.quarto_globo
+    icon_on: mdi-television-guide
+    icon_off: mdi-television-guide
+
+news_quarto:
+    widget_type: script
+    title: Globonews
+    entity: script.quarto_globonews
+    icon_on: mdi-television-guide
+    icon_off: mdi-television-guide
+
+multishow_quarto:
+    widget_type: script
+    title: Multishow
+    entity: script.quarto_multishow
+    icon_on: mdi-television-guide
+    icon_off: mdi-television-guide
+
+h_h_quarto:
+    widget_type: script
+    title: H&H
+    entity: script.quarto_h_h
+    icon_on: mdi-television-guide
+    icon_off: mdi-television-guide
+
+gnt_quarto:
+    widget_type: script
+    title: GNT
+    entity: script.quarto_gnt
+    icon_on: mdi-television-guide
+    icon_off: mdi-television-guide
+
+vol_mais_quarto:
+    widget_type: script
+    title: Volume
+    entity: script.quarto_volume_mais
+    icon_on: mdi-volume-plus
+    icon_off: mdi-volume-plus
+
+vol_menos_quarto:
+    widget_type: script
+    title: Volume
+    entity: script.quarto_volume_menos
+    icon_on: mdi-volume-minus
+    icon_off: mdi-volume-minus
+
+porta_sala:
+    widget_type: binary_sensor
+    title: Porta Sala
+    entity: binary_sensor.motion_sensor_158d0001229aa9
+    icon_on: mdi-exit-to-app
+    icon_off: mdi-exit-to-app
+
+
+
+reload:
+  widget_type: reload
+ 
+layout:
+  - clock(3x1), weather(5x2)
+  - mrt6, gas, fumaca
+  - light_sofa, light_abajur_sala, light_abajur_quarto, tv_quarto, net_quarto, globo_quarto, news_quarto, vol_mais_quarto
+  - sensor.temperature_158d00017157c5, sensor.temperature_158d00018732e0, sensor.temperature_158d0001ad3a59, spacer, gnt_quarto, multishow_quarto, h_h_quarto, vol_menos_quarto
+  - porta_sala, binary_sensor.motion_sensor_158d00016db250, binary_sensor.door_window_sensor_158d0001840042, script.quarto_ar_power, script.quarto_ar_22, script.quarto_ar_23, script.quarto_ar_24, script.quarto_ar_25
+
+

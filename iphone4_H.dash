@@ -1,0 +1,111 @@
+title: Dashboard Home Automation - iPhone4
+widget_dimensions: [115,115]
+widget_size: [1,1]
+widget_margins: [3,3]
+columns: 4
+global_parameters:
+    use_comma: 0
+    precision: 1
+    use_hass_icon: 1
+
+clock:
+  widget_type: clock
+
+weather:
+  widget_type: weather
+  units: "&deg,C"
+
+mrtx:
+    widget_type: device_tracker
+    title: Marilan
+    icon_on: mdi-cellphone-iphone
+    device: mrtx
+
+light_led_sofa:
+    widget_type: light
+    title: Led Sofa
+    entity: light.led_sofa
+    icon_on: mdi-sofa
+    icon_off: mdi-sofa
+
+light_sofa:
+    widget_type: light
+    title: Sofa
+    entity: light.sofa
+    icon_on: mdi-lightbulb-on
+    icon_off: mdi-lightbulb
+
+light_sofa_left:
+    widget_type: light
+    title: Left Sofa
+    entity: light.sofa_left_side_lamp
+    icon_on: mdi-lightbulb-on-outline
+    icon_off: mdi-lightbulb-outline
+
+light_sofa_right:
+    widget_type: light
+    title: Right Sofa
+    entity: light.sofa_right_side_lamp
+    icon_on: mdi-lightbulb-on-outline
+    icon_off: mdi-lightbulb-outline
+
+light_sofa_led:
+    widget_type: light
+    title: Led Sofa
+    entity: light.led_sofa
+    icon_on: mdi-led-on
+    icon_off: mdi-led-outline
+
+light_dinner:
+    widget_type: light
+    title: Dinner
+    entity: light.dinner_room
+    icon_on: mdi-led-on
+    icon_off: mdi-led-outline
+
+remote_tv_sala:
+    widget_type: script
+    title: Tv
+    entity: script.sala_tv_power
+    icon_on: mdi-television
+    icon_off: mdi-television
+
+temperatura_sala:
+    widget_type: sensor
+    title: Temp.
+    entity: sensor.temperature_158d00017157c5
+
+tempo:
+    widget_type: sensor
+    title: Tempo
+    entity: sensor.dark_sky_summary
+
+globo:
+    widget_type: script
+    title: Globo
+    entity: script.sala_globo
+    icon_on: mdi-remote
+    icon_off: mdi-remote
+
+news:
+    widget_type: script
+    title: GNews
+    entity: script.sala_globonews
+    icon_on: mdi-remote
+    icon_off: mdi-remote
+
+cortina:
+    widget_type: cover
+    title: Cortina
+    entity: cover.sala
+    icon_on: mdi-theater
+    icon_off: mdi-theater
+
+
+
+layout:
+#  - clock(1x1), weather(2x1)
+#  - 
+  - light_sofa(1x1), light_sofa_left(1x1), light_sofa_right(1x1), light_sofa_led(1x1)
+  - light_dinner(1x1), cortina(1x1), remote_tv_sala(1x1), globo(1x1)
+  - temperatura_sala(2x1), tempo(2x1)
