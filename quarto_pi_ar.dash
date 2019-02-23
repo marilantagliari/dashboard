@@ -1,0 +1,17 @@
+title: Main Dashboard Home Automation
+widget_dimensions: [110,98]
+widget_size: [1,1]
+widget_margins: [4,2]
+columns: 4
+global_parameters:
+    use_comma: 0
+    precision: 1
+    use_hass_icon: 1
+
+
+layout:
+  - include: quarto_definition
+  - include: quarto_pi_menu
+  - pi_home, script.quarto_ar_power, script.quarto_ar_22, script.quarto_ar_23
+  - pi_tv, script.quarto_ar_24, script.quarto_ar_25
+  - pi_ar

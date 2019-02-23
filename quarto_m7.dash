@@ -1,0 +1,23 @@
+title: Main Dashboard Home Automation
+widget_dimensions: [120,120]
+widget_size: [1,1]
+widget_margins: [2,2]
+columns: 8
+global_parameters:
+    use_comma: 0
+    precision: 1
+    use_hass_icon: 1
+
+reload:
+  widget_type: reload
+ 
+layout:
+  - include: quarto_definition
+  - include: quarto_m7_menu
+  - clock(3x1), weather(5x1)
+  - m7_home, temp_quarto, temp_varanda, light_abajur_quarto, light_abajur_marilan, light_tv, light_closet, light_bathroom
+  - m7_tv, tv_quarto, net_quarto, quarto_assistirtv, quarto_sair, quarto_loud, vol_tv_menos_quarto, vol_tv_mais_quarto
+  - m7_net, globo_quarto, news_quarto, gnt_quarto, multishow_quarto, h_h_quarto, vol_menos_quarto, vol_mais_quarto
+  - m7_ar, script.quarto_ar_power, quarto_hot, quarto_cold, script.quarto_ar_22, script.quarto_ar_23, script.quarto_ar_24, script.quarto_ar_25
+
+

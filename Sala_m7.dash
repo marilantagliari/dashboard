@@ -8,18 +8,22 @@ global_parameters:
     precision: 1
     use_hass_icon: 1
 
+
+# Cortina fecha/abre
+# cortina sol
+# 
+
+# Nick
+# gloob
+#
+# ventilaccao
+
 clock:
   widget_type: clock
 
 weather:
   widget_type: weather
   units: "&deg,C"
-
-mrt6:
-    widget_type: device_tracker
-    title: Marilan
-    icon_on: mdi-cellphone-iphone
-    device: mrt6
 
 gas:
     widget_type: binary_sensor
@@ -38,84 +42,98 @@ fumaca:
 light_sofa:
     widget_type: light
     title: Led Sofa
-    entity: light.led_sofa
+    entity: light.yeelight_strip_7811dc66e10c
     icon_on: mdi-sofa
     icon_off: mdi-sofa
 
-light_abajur_sala:
-    widget_type: switch
-    title: Abajur Sala
-    entity: switch.plug_158d0001717b65
-    icon_on: mdi-lightbulb-on-outline
-    icon_off: mdi-lightbulb-outline
-
-light_abajur_quarto:
+light_sofahue:
     widget_type: light
-    title: Abajur Quarto
-    entity: light.abajur_quarto
+    title: Abajur
+    entity: light.sofa
     icon_on: mdi-lightbulb-on-outline
     icon_off: mdi-lightbulb-outline
 
-tv_quarto:
+light_sofahue_left:
+    widget_type: light
+    title: Abajur Left
+    entity: light.sofa_left_side_lamp
+    icon_on: mdi-lightbulb-on-outline
+    icon_off: mdi-lightbulb-outline
+
+light_sofahue_right:
+    widget_type: light
+    title: Abajur Right
+    entity: light.sofa_right_side_lamp
+    icon_on: mdi-lightbulb-on-outline
+    icon_off: mdi-lightbulb-outline
+
+light_jantarhue:
+    widget_type: light
+    title: Dinner Room
+    entity: light.dinner_room
+    icon_on: mdi-lightbulb-on-outline
+    icon_off: mdi-lightbulb-outline
+
+tv_sala:
     widget_type: script
-    title: TV Quarto
-    entity: script.quarto_tv_power
+    title: TV Sala
+    entity: script.sala_tv_power
     icon_on: mdi-television-classic
     icon_off: mdi-television-classic
 
-net_quarto:
+net_sala:
     widget_type: script
-    title: NET Quarto
-    entity: script.quarto_net_power
+    title: NET Sala
+    entity: script.sala_net_power
     icon_on: mdi-monitor-multiple
     icon_off: mdi-monitor-multiple
 
-globo_quarto:
+globo_sala:
     widget_type: script
     title: Globo
-    entity: script.quarto_globo
+    entity: script.sala_globo
     icon_on: mdi-television-guide
     icon_off: mdi-television-guide
 
-news_quarto:
+news_sala:
     widget_type: script
     title: Globonews
-    entity: script.quarto_globonews
+    entity: script.sala_globonews
     icon_on: mdi-television-guide
     icon_off: mdi-television-guide
 
-multishow_quarto:
+multishow_sala:
     widget_type: script
     title: Multishow
-    entity: script.quarto_multishow
+    entity: script.sala_multishow
     icon_on: mdi-television-guide
     icon_off: mdi-television-guide
 
-h_h_quarto:
+h_h_sala:
     widget_type: script
     title: H&H
-    entity: script.quarto_h_h
+    entity: script.sala_h_h
     icon_on: mdi-television-guide
     icon_off: mdi-television-guide
 
-gnt_quarto:
+gnt_sala:
     widget_type: script
     title: GNT
-    entity: script.quarto_gnt
+    entity: script.sala_gnt
     icon_on: mdi-television-guide
     icon_off: mdi-television-guide
 
-vol_mais_quarto:
+vol_mais_sala:
     widget_type: script
     title: Volume
-    entity: script.quarto_volume_mais
+    entity: script.sala_volume_mais
     icon_on: mdi-volume-plus
     icon_off: mdi-volume-plus
 
-vol_menos_quarto:
+vol_menos_sala:
     widget_type: script
     title: Volume
-    entity: script.quarto_volume_menos
+    entity: script.sala_volume_menos
     icon_on: mdi-volume-minus
     icon_off: mdi-volume-minus
 
@@ -131,11 +149,6 @@ temp_sala:
     title: Temp. Sala
     entity: sensor.temperature_158d00017157c5
 
-temp_quarto:
-    widget_type: sensor
-    title: Temp. Quarto
-    entity: sensor.temperature_158d0001ad3a59
-    
 temp_varanda:
     widget_type: sensor
     title: Temp. Varanda
@@ -146,9 +159,9 @@ reload:
  
 layout:
   - clock(3x1), weather(5x2)
-  - mrt6, gas
-  - light_abajur_quarto, temp_quarto, temp_varanda, tv_quarto, net_quarto, globo_quarto, news_quarto, vol_mais_quarto
-  - gnt_quarto, multishow_quarto, h_h_quarto, vol_menos_quarto
-  - porta_sala, binary_sensor.motion_sensor_158d00016db250, binary_sensor.door_window_sensor_158d0001840042, script.quarto_ar_power, script.quarto_ar_22, script.quarto_ar_23, script.quarto_ar_24, script.quarto_ar_25
+  - porta_sala, gas, fumaca
+  - temp_varanda, temp_sala, tv_sala, net_sala, globo_sala, news_sala, vol_mais_sala, vol_menos_sala
+  - light_jantarhue, light_sofa, light_sofahue, light_sofahue_left, light_sofahue_right, gnt_sala, multishow_sala, h_h_sala
+  - script.sala_ar_power, script.sala_ar_22, script.sala_ar_23, reload
 
 
